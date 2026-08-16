@@ -36,4 +36,6 @@ android {
 
 dependencies {
     implementation("androidx.webkit:webkit:1.17.0")
+    implementation("androidx.biometric:biometric:1.1.0")
+    implementation("androidx.fragment:fragment-ktx:1.8.5")
 }
