@@ -1,30 +1,31 @@
 <!doctype html><html lang="fa" dir="rtl"><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#111827">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0a1f2e">
 <title>دَنگی V1</title>
 <style>
 *{box-sizing:border-box}
+@font-face{font-family:'Golpayegani';src:url('SD-Golpayegani-Bold.ttf') format('truetype');font-weight:normal;font-display:swap}
 :root{
- --navy:#0b1f3a;--navy2:#102b4d;--navy3:#173a63;
+ --navy:#0a1f2e;--navy2:#0d2b3d;--navy3:#123f4f;
  --ink:#172033;--muted:#6b7890;--bg:#f3f6fa;--card:#ffffff;
- --line:#e4e9f0;--gold:#c9a96e;--green:#087f5b;--red:#b42318;--orange:#b76e00;
+ --line:#d5e7e0;--gold:#1fa971;--green:#0f9b73;--red:#a3253f;--orange:#b76e00;
 }
-body{margin:0;background:linear-gradient(180deg,#eef3f8 0%,#f7f8fa 45%,#f3f5f8 100%);color:var(--ink);font-family:Tahoma,Arial,sans-serif}
-header{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:22px 20px 20px;position:sticky;top:0;z-index:3;box-shadow:0 8px 25px #0b1f3a22}
+body{margin:0;background:linear-gradient(180deg,#eef6f4 0%,#f6f9f9 45%,#f2f6f7 100%);color:var(--ink);font-family:'Golpayegani',Tahoma,Arial,sans-serif}
+header{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:22px 20px 20px;position:sticky;top:0;z-index:3;box-shadow:0 8px 25px #0a1f2e22}
 header h1{margin:0;font-size:27px;letter-spacing:-.5px}
-header p{margin:6px 0 0;color:#c9d6e6;font-size:12px}
+header p{margin:6px 0 0;color:#a8c9d4;font-size:12px}
 main{max-width:900px;margin:auto;padding:17px 15px 95px}.screen{display:none}.active{display:block}
 h2{font-size:20px;margin:7px 0 15px}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:11px}
-.card{background:rgba(255,255,255,.96);border:1px solid var(--line);border-radius:18px;padding:15px;margin:10px 0;box-shadow:0 7px 24px #0b1f3a0b}
+.card{background:rgba(255,255,255,.96);border:1px solid var(--line);border-radius:18px;padding:15px;margin:10px 0;box-shadow:0 7px 24px #0a1f2e0b}
 .stat{font-size:27px;font-weight:800;color:var(--navy);margin-top:5px}.muted{color:var(--muted);font-size:12px}
 .row{display:flex;gap:8px;align-items:center}.between{justify-content:space-between}
-button,input,textarea,select{font:inherit}button{border:0;border-radius:11px;padding:10px 13px;background:var(--navy);color:#fff;cursor:pointer;box-shadow:0 4px 12px #0b1f3a18}
+button,input,textarea,select{font:inherit}button{border:0;border-radius:11px;padding:10px 13px;background:var(--navy);color:#fff;cursor:pointer;box-shadow:0 4px 12px #0a1f2e18}
 button:hover{background:var(--navy3)}.secondary{background:#e8eef6;color:var(--navy);box-shadow:none}.danger{background:#fff0ef;color:var(--red);box-shadow:none}
-input,textarea,select{width:100%;padding:11px;border:1px solid #d7dee8;border-radius:11px;background:#fff;color:var(--ink);outline:none}
-input:focus,textarea:focus,select:focus{border-color:#7f9bbb;box-shadow:0 0 0 3px #173a6312}textarea{min-height:85px}form{display:grid;gap:9px}
-.item{padding:11px 0;border-bottom:1px solid #edf0f4}.item:last-child{border:0}
-.badge{display:inline-block;padding:5px 9px;border-radius:999px;background:#eaf0f7;color:var(--navy);font-size:11px;margin:2px}
+input,textarea,select{width:100%;padding:11px;border:1px solid #c8e2d6;border-radius:11px;background:#fff;color:var(--ink);outline:none}
+input:focus,textarea:focus,select:focus{border-color:#3a7a90;box-shadow:0 0 0 3px #123f4f12}textarea{min-height:85px}form{display:grid;gap:9px}
+.item{padding:11px 0;border-bottom:1px solid #e3f0ea}.item:last-child{border:0}
+.badge{display:inline-block;padding:5px 9px;border-radius:999px;background:#e4f2ec;color:var(--navy);font-size:11px;margin:2px}
 .empty{text-align:center;color:#9aa5b5;padding:24px}
-.nav{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-top:1px solid #dfe5ec;display:flex;justify-content:center;z-index:5;box-shadow:0 -8px 24px #0b1f3a0b}
+.nav{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);border-top:1px solid #d5e7e0;display:flex;justify-content:center;z-index:5;box-shadow:0 -8px 24px #0a1f2e0b}
 .nav button{background:transparent;color:#718096;font-size:10px;border-radius:0;padding:8px 6px;min-width:65px;box-shadow:none}.nav button span{display:block;font-size:18px;color:var(--navy);margin-bottom:2px}
 .in{color:var(--green)}.out{color:var(--red)}
 .kpi-title{color:var(--navy);font-weight:700}
@@ -32,47 +33,71 @@ input:focus,textarea:focus,select:focus{border-color:#7f9bbb;box-shadow:0 0 0 3p
 @media(min-width:700px){.grid{grid-template-columns:repeat(4,1fr)}.nav{width:760px;left:50%;right:auto;transform:translateX(-50%);border-radius:18px 18px 0 0}}
 
 /* DANGI V3 — Director Desk */
-.hero{background:linear-gradient(135deg,#081a31 0%,#0d2949 55%,#173a63 100%);color:#fff;border:0;overflow:hidden;position:relative}
+.hero{background:linear-gradient(135deg,#07141d 0%,#0a2734 55%,#123f4f 100%);color:#fff;border:0;overflow:hidden;position:relative}
 .hero:after{content:"دَنگی";position:absolute;left:-10px;bottom:-22px;font-size:92px;font-weight:900;color:#ffffff08;letter-spacing:-5px}
-.hero .muted{color:#b9c9dc}.hero .stat{color:#fff;font-size:31px}
+.hero .muted{color:#a8c9d4}.hero .stat{color:#fff;font-size:31px}
 .quick-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}
-.quick{background:#f5f8fc;border:1px solid #e2e9f2;border-radius:14px;padding:12px;text-align:right;color:#0b1f3a}
-.quick strong{display:block;font-size:13px;margin-bottom:3px}.quick small{color:#77869a}
+.quick{background:#e4f2ec;border:1px solid #c8e2d6;border-radius:14px;padding:12px;text-align:right;color:#0a1f2e}
+.quick strong{display:block;font-size:13px;margin-bottom:3px}.quick small{color:#4a8a72}
 .project-card{position:relative;padding-right:16px;overflow:hidden}
-.project-card:before{content:"";position:absolute;right:0;top:0;bottom:0;width:4px;background:#c9a96e}
-.project-code{font-size:12px;letter-spacing:.5px;color:#7890aa;font-weight:bold}
-.project-name{font-size:18px;font-weight:800;color:#0b1f3a;margin:4px 0 7px}
+.project-card:before{content:"";position:absolute;right:0;top:0;bottom:0;width:4px;background:#1fa971}
+.project-code{font-size:12px;letter-spacing:.5px;color:#3a7a90;font-weight:bold}
+.project-name{font-size:18px;font-weight:800;color:#0a1f2e;margin:4px 0 7px}
 .project-meta{display:flex;gap:6px;flex-wrap:wrap}
-.project-footer{margin-top:12px;padding-top:10px;border-top:1px solid #edf1f5;display:flex;justify-content:space-between;color:#718096;font-size:11px}
-.nav button.active{color:#0b1f3a;font-weight:800}.nav button.active span{color:#c9a96e}
+.project-footer{margin-top:12px;padding-top:10px;border-top:1px solid #e3f0ea;display:flex;justify-content:space-between;color:#718096;font-size:11px}
+.nav button.active{color:#0a1f2e;font-weight:800}.nav button.active span{color:#1fa971}
 @media(min-width:700px){.quick-grid{grid-template-columns:repeat(4,1fr)}}
 
-.project-header{background:linear-gradient(135deg,#081a31,#12365d);color:#fff;border:0;padding:20px;position:relative;overflow:hidden}
+.project-header{background:linear-gradient(135deg,#07141d,#123f4f);color:#fff;border:0;padding:20px;position:relative;overflow:hidden}
 .project-header:after{content:"PROJECT";position:absolute;left:-8px;bottom:-25px;font-size:72px;font-weight:900;color:#fff07;letter-spacing:-2px}
-.project-header .muted{color:#b9c9dc}.project-header h2{color:#fff;margin:5px 0 10px}
+.project-header .muted{color:#a8c9d4}.project-header h2{color:#fff;margin:5px 0 10px}
 .project-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin:12px 0}
-.project-tab{background:#eef3f8;color:#173a63;box-shadow:none;font-size:11px;padding:10px 5px}.project-tab.active{background:#0b1f3a;color:#fff}
-.project-summary{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.mini-stat{background:#f7f9fc;border:1px solid #e5ebf2;border-radius:13px;padding:12px}.mini-stat b{display:block;font-size:20px;color:#0b1f3a;margin-top:3px}
+.project-tab{background:#e4f2ec;color:#123f4f;box-shadow:none;font-size:11px;padding:10px 5px}.project-tab.active{background:#0a1f2e;color:#fff}
+.project-summary{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.mini-stat{background:#f2f8f6;border:1px solid #c8e2d6;border-radius:13px;padding:12px}.mini-stat b{display:block;font-size:20px;color:#0a1f2e;margin-top:3px}
 .project-section-title{display:flex;justify-content:space-between;align-items:center;margin-bottom:5px}
-.money-line{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #edf1f5}
+.money-line{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #e3f0ea}
 @media(min-width:700px){.project-summary{grid-template-columns:repeat(4,1fr)}}
 
-.workflow-card{background:#fff;border:1px solid #dfe6ef;border-radius:18px;padding:15px;margin:10px 0;box-shadow:0 7px 24px #0b1f3a0b}
-.workflow-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}.workflow-head h3{margin:0;color:#0b1f3a}.workflow-head small{color:#7a8798}
+.workflow-card{background:#fff;border:1px solid #d5e7e0;border-radius:18px;padding:15px;margin:10px 0;box-shadow:0 7px 24px #0a1f2e0b}
+.workflow-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}.workflow-head h3{margin:0;color:#0a1f2e}.workflow-head small{color:#7a8798}
 .workflow-scroll{overflow-x:auto;padding:8px 2px}.workflow-track{display:flex;align-items:flex-start;min-width:max-content}.wstep{display:flex;align-items:flex-start;cursor:pointer}
-.wnode{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#eef2f6;color:#718096;border:2px solid #d8e1eb;font-size:11px;font-weight:800}
-.wstep.done .wnode{background:#173a63;color:#fff;border-color:#173a63}.wstep.current .wnode{background:#c9a96e;color:#081a31;border-color:#c9a96e;box-shadow:0 0 0 6px #c9a96e22}
-.wlabel{font-size:10px;color:#7d8999;text-align:center;margin-top:7px;max-width:75px}.wstep.done .wlabel{color:#173a63;font-weight:700}.wstep.current .wlabel{color:#8a641e;font-weight:900}
-.wline{width:30px;height:3px;border-radius:5px;background:#dce4ed;margin:16px 4px 0}.wline.done{background:#173a63}.workflow-now{margin-top:10px;padding:11px;border-radius:12px;background:#f6f8fb;border-right:3px solid #c9a96e;font-size:12px}
+.wnode{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#eaf5f0;color:#718096;border:2px solid #c8e2d6;font-size:11px;font-weight:800}
+.wstep.done .wnode{background:#123f4f;color:#fff;border-color:#123f4f}.wstep.current .wnode{background:#1fa971;color:#07141d;border-color:#1fa971;box-shadow:0 0 0 6px #1fa97122}
+.wlabel{font-size:10px;color:#7d8999;text-align:center;margin-top:7px;max-width:75px}.wstep.done .wlabel{color:#123f4f;font-weight:700}.wstep.current .wlabel{color:#0d7a4f;font-weight:900}
+.wline{width:30px;height:3px;border-radius:5px;background:#d5e7e0;margin:16px 4px 0}.wline.done{background:#123f4f}.workflow-now{margin-top:10px;padding:11px;border-radius:12px;background:#e4f2ec;border-right:3px solid #1fa971;font-size:12px}
 
-.smart-card{background:linear-gradient(135deg,#0b1f3a,#12365d);color:#fff;border:0}.smart-card .muted{color:#bed0e3}
-.smart-title{font-size:11px;color:#c9a96e;font-weight:800;margin-bottom:6px}.smart-action{font-size:17px;font-weight:800;line-height:1.7}
-.urgency{display:inline-block;padding:4px 8px;border-radius:999px;font-size:10px;font-weight:bold}.u-now{background:#fee2e2;color:#991b1b}.u-soon{background:#fff3cd;color:#8a5b00}.u-later{background:#eaf0f7;color:#173a63}
-.follow-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.follow-kpi{padding:10px;border-radius:12px;background:#f5f8fc;border:1px solid #e4eaf1;text-align:center}.follow-kpi b{display:block;font-size:19px;color:#0b1f3a}.follow-kpi small{font-size:9px;color:#7a8798}
+.smart-card{background:linear-gradient(135deg,#0a1f2e,#123f4f);color:#fff;border:0}.smart-card .muted{color:#bed0e3}
+.smart-title{font-size:11px;color:#1fa971;font-weight:800;margin-bottom:6px}.smart-action{font-size:17px;font-weight:800;line-height:1.7}
+.urgency{display:inline-block;padding:4px 8px;border-radius:999px;font-size:10px;font-weight:bold}.u-now{background:#fee2e2;color:#991b1b}.u-soon{background:#fff3cd;color:#8a5b00}.u-later{background:#e4f2ec;color:#123f4f}
+.follow-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:7px}.follow-kpi{padding:10px;border-radius:12px;background:#e4f2ec;border:1px solid #d5e7e0;text-align:center}.follow-kpi b{display:block;font-size:19px;color:#0a1f2e}.follow-kpi small{font-size:9px;color:#7a8798}
 
-.home-return{display:inline-flex;align-items:center;gap:6px;background:#e8eef6;color:#0b1f3a;box-shadow:none;margin-bottom:12px;padding:9px 12px;font-weight:800}.home-return:hover{background:#dce6f2}
+/* Lock screen */
+.lock-screen{position:fixed;inset:0;background:linear-gradient(135deg,#07141d 0%,#0a2734 55%,#123f4f 100%);display:flex;align-items:center;justify-content:center;z-index:999;padding:20px}
+.lock-box{background:#fff;padding:32px 26px;border-radius:22px;max-width:320px;width:100%;text-align:center;box-shadow:0 25px 70px #00000055}
+.lock-box h1{margin:0 0 6px;color:#0a1f2e;font-size:26px}
+.lock-box p{color:#7a8798;font-size:13px;margin:0 0 18px}
+.lock-box input{text-align:center;letter-spacing:3px;font-size:18px;margin-bottom:12px}
+.lock-box button{width:100%;background:var(--navy)}
+.bio-btn{width:100%;background:#e4f2ec;color:#0a1f2e;border:1px solid #c8e2d6;border-radius:12px;padding:12px;font-size:14px;font-weight:700;margin-top:10px;cursor:pointer;display:none}
+.lock-error{color:#a3253f;font-size:12px;margin-top:10px;min-height:16px}
+.lock-icon{width:52px;height:52px;border-radius:50%;background:#e4f2ec;color:#1fa971;display:flex;align-items:center;justify-content:center;margin:0 auto 14px;font-size:24px}
+.header-row{display:flex;justify-content:space-between;align-items:flex-start}
+.lock-toggle{background:rgba(255,255,255,.14);border-radius:11px;padding:9px 12px;box-shadow:none;font-size:16px}
 </style>
-<header><h1>دَنگی</h1><p>اتاق فرمان شخصی پروژه‌های فیلمسازی</p></header>
+<div id="lockScreen" class="lock-screen">
+  <div class="lock-box">
+    <div class="lock-icon">🔒</div>
+    <h1>دَنگی</h1>
+    <p id="lockMsg">در حال بارگذاری...</p>
+    <form onsubmit="return handleLockSubmit(event)">
+      <input id="lockInput" type="password" placeholder="رمز عبور" autocomplete="off">
+      <button type="submit" id="lockBtn">ورود</button>
+    </form>
+    <div id="lockError" class="lock-error"></div>
+    <button type="button" id="bioBtn" class="bio-btn" onclick="tryBiometric()">👆 ورود با اثر انگشت</button>
+  </div>
+</div>
+<header><div class="header-row"><div><h1>دَنگی</h1><p>اتاق فرمان شخصی پروژه‌های فیلمسازی</p></div><button class="lock-toggle" onclick="changePin()" title="تغییر رمز">🔒</button></div></header>
 <main>
 <section id="home" class="screen active">
 <div class="card hero">
@@ -102,43 +127,41 @@ input:focus,textarea:focus,select:focus{border-color:#7f9bbb;box-shadow:0 0 0 3p
 <div class="card"><h3 class="section-title">منتظر جواب</h3><div id="hf"></div></div>
 </section>
 
-<section id="projects" class="screen"><div class="row between"><h2 class="section-title">🎬 پروژه‌ها</h2><button onclick="toggle('pf')">+ پروژه</button></div>
+<section id="projects" class="screen"><button class="secondary" onclick="go('home')">🏠 خانه</button><div class="row between"><h2 class="section-title">🎬 پروژه‌ها</h2><button onclick="toggle('pf')">+ پروژه</button></div>
 <div id="pf" class="card" style="display:none"><form onsubmit="addProject(event)"><input id="pc" placeholder="کد پروژه، مثلاً RS-017" required><input id="pn" placeholder="نام پروژه" required>
 <div class="row"><select id="pt"><option>داستانی</option><option>مستند</option><option>فیلمنامه</option><option>تبلیغاتی</option><option>ایده</option><option>سایر</option></select><select id="pr"><option>کارگردان</option><option>تهیه‌کننده</option><option>کارگردان و تهیه‌کننده</option><option>نویسنده</option></select></div>
 <select id="ps"><option>ایده</option><option>توسعه</option><option>فیلمنامه</option><option>تأمین مالی</option><option>پیش‌تولید</option><option>تولید</option><option>پس‌تولید</option><option>منتظر</option><option>تمام‌شده</option></select>
 <textarea id="px" placeholder="یادداشت کوتاه"></textarea><button>ثبت پروژه</button></form></div>
 <input id="psearch" oninput="renderProjects()" placeholder="جستجوی پروژه..."><div id="pl"></div></section>
 
-<section id="detail" class="screen"><button class="secondary" onclick="go('projects')">← پروژه‌ها</button> <button class="danger" onclick="delProject()">حذف</button><div id="dbox"></div></section>
+<section id="detail" class="screen"><button class="secondary" onclick="go('home')">🏠 خانه</button> <button class="secondary" onclick="go('projects')">← پروژه‌ها</button> <button class="danger" onclick="delProject()">حذف</button><div id="dbox"></div></section>
 
-<section id="tasks" class="screen"><div class="row between"><h2 class="section-title">✓ کارها</h2><button onclick="toggle('tf')">+ کار</button></div>
-<div id="tf" class="card" style="display:none"><form onsubmit="addTask(event)"><input id="tt" placeholder="شرح کار" required><input id="tp" placeholder="کد پروژه (اختیاری)"><input id="td" type="date"><button>ثبت</button></form></div>
+<section id="tasks" class="screen"><button class="secondary" onclick="go('home')">🏠 خانه</button><div class="row between"><h2 class="section-title">✓ کارها</h2><button onclick="toggle('tf')">+ کار</button></div>
+<div id="tf" class="card" style="display:none"><form onsubmit="addTask(event)"><input id="tt" placeholder="شرح کار" required><select id="tp" onchange="d.lastProject=this.value;save()"></select><input id="td" type="date"><button>ثبت</button></form></div>
 <input id="tsearch" oninput="renderTasks()" placeholder="جستجوی کار..."><div id="tl"></div></section>
 
-<section id="follow" class="screen"><div class="row between"><h2 class="section-title">🔄 پیگیری‌ها</h2><button onclick="toggle('ff')">+ پیگیری</button></div>
-<div id="ff" class="card" style="display:none"><form onsubmit="addFollow(event)"><input id="ft" placeholder="منتظر چه چیزی هستی؟" required><input id="fp" placeholder="از چه کسی؟"><input id="fpr" placeholder="کد پروژه"><input id="fd" type="date"><input id="flast" placeholder="آخرین اقدام"><button>ثبت</button></form></div><div id="fl"></div></section>
+<section id="follow" class="screen"><button class="secondary" onclick="go('home')">🏠 خانه</button><div class="row between"><h2 class="section-title">🔄 پیگیری‌ها</h2><button onclick="toggle('ff')">+ پیگیری</button></div>
+<div id="ff" class="card" style="display:none"><form onsubmit="addFollow(event)"><input id="ft" placeholder="منتظر چه چیزی هستی؟" required><input id="fp" placeholder="از چه کسی؟"><select id="fpr" onchange="d.lastProject=this.value;save()"></select><input id="fd" type="date"><input id="flast" placeholder="آخرین اقدام"><button>ثبت</button></form></div><div id="fl"></div></section>
 
-<section id="money" class="screen"><div class="row between"><h2 class="section-title">💰 مالی</h2><button onclick="toggle('mf')">+ تراکنش</button></div>
-<div id="mf" class="card" style="display:none"><form onsubmit="addMoney(event)"><input id="mt" placeholder="شرح تراکنش" required><input id="mp" placeholder="طرف حساب"><input id="mpr" placeholder="کد پروژه"><input id="ma" type="number" min="0" placeholder="مبلغ" required><select id="mty"><option value="in">دریافتی</option><option value="out">پرداختی</option></select><input id="md" type="date"><button>ثبت</button></form></div>
+<section id="money" class="screen"><button class="secondary" onclick="go('home')">🏠 خانه</button><div class="row between"><h2 class="section-title">💰 مالی</h2><button onclick="toggle('mf')">+ تراکنش</button></div>
+<div id="mf" class="card" style="display:none"><form onsubmit="addMoney(event)"><input id="mt" placeholder="شرح تراکنش" required><input id="mp" placeholder="طرف حساب"><select id="mpr" onchange="d.lastProject=this.value;save()"></select><input id="ma" type="number" min="0" placeholder="مبلغ" required><select id="mty"><option value="in">دریافتی</option><option value="out">پرداختی</option></select><input id="md" type="date"><button>ثبت</button></form></div>
 <div class="grid"><div class="card"><div class="muted">دریافتی</div><b id="mi">0</b></div><div class="card"><div class="muted">پرداختی</div><b id="mo">0</b></div></div><div id="ml"></div></section>
 
-<section id="people" class="screen"><div class="row between"><h2 class="section-title">👤 آدم‌ها</h2><button onclick="toggle('xf')">+ شخص</button></div>
+<section id="people" class="screen"><button class="secondary" onclick="go('home')">🏠 خانه</button><div class="row between"><h2 class="section-title">👤 آدم‌ها</h2><button onclick="toggle('xf')">+ شخص</button></div>
 <div id="xf" class="card" style="display:none"><form onsubmit="addPerson(event)"><input id="xn" placeholder="نام شخص / مجموعه" required><input id="xr" placeholder="نقش"><input id="xc" placeholder="راه ارتباطی"><textarea id="xx" placeholder="یادداشت"></textarea><button>ثبت</button></form></div><div id="xl"></div></section>
 
-<section id="ideas" class="screen"><div class="row between"><h2 class="section-title">💡 ایده‌ها</h2><button onclick="toggle('if')">+ ایده</button></div>
+<section id="ideas" class="screen"><button class="secondary" onclick="go('home')">🏠 خانه</button><div class="row between"><h2 class="section-title">💡 ایده‌ها</h2><button onclick="toggle('if')">+ ایده</button></div>
 <div id="if" class="card" style="display:none"><form onsubmit="addIdea(event)"><input id="it" placeholder="عنوان ایده"><textarea id="ix" placeholder="ایده..."></textarea><select id="is"><option>خام</option><option>در حال پرورش</option><option>قابل تبدیل به پروژه</option><option>تبدیل به پروژه شد</option><option>کنار گذاشته شد</option></select><button>ذخیره</button></form></div><div id="il"></div></section>
 
-<section id="inbox" class="screen"><div class="row between"><h2 class="section-title">⚡ Inbox</h2><button onclick="quick()">+ سریع بنویس</button></div><div class="card"><div class="muted">هر چیزی را که الان نمی‌خواهی دسته‌بندی کنی اینجا بریز.</div></div><div id="bl"></div></section>
+<section id="inbox" class="screen"><button class="secondary" onclick="go('home')">🏠 خانه</button><div class="row between"><h2 class="section-title">⚡ Inbox</h2><button onclick="quick()">+ سریع بنویس</button></div><div class="card"><div class="muted">هر چیزی را که الان نمی‌خواهی دسته‌بندی کنی اینجا بریز.</div></div><div id="bl"></div></section>
 </main>
 <nav class="nav"><button onclick="go('home')"><span>⌂</span>خانه</button><button onclick="go('projects')"><span>▣</span>پروژه</button><button onclick="go('tasks')"><span>✓</span>کارها</button><button onclick="go('follow')"><span>↻</span>پیگیری</button><button onclick="go('money')"><span>﷼</span>مالی</button><button onclick="go('people')"><span>♙</span>آدم‌ها</button><button onclick="go('ideas')"><span>✎</span>ایده</button><button onclick="go('inbox')"><span>⚡</span>Inbox</button></nav>
 <script>
-const K='dangi_v1';let d=JSON.parse(localStorage[K]||'{"projects":[],"tasks":[],"follow":[],"money":[],"people":[],"ideas":[],"inbox":[]}'),cur=null;
+const K='dangi_v1';let d=JSON.parse(localStorage[K]||'{"projects":[],"tasks":[],"follow":[],"money":[],"people":[],"ideas":[],"inbox":[],"lastProject":""}'),cur=null;
 const save=()=>localStorage[K]=JSON.stringify(d),fmt=n=>new Intl.NumberFormat('fa-IR').format(n||0),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 function toggle(id){let e=document.getElementById(id);e.style.display=e.style.display==='none'?'block':'none'}
 function go(id){document.querySelectorAll('.screen').forEach(e=>e.classList.remove('active'));document.getElementById(id).classList.add('active');render();scrollTo(0,0)}
-// دکمه ثابت بازگشت به خانه در ابتدای تمام بخش‌های داخلی
-document.querySelectorAll('.screen:not(#home)').forEach(section=>{let b=document.createElement('button');b.className='home-return';b.type='button';b.innerHTML='⌂&nbsp; صفحه اصلی';b.onclick=()=>go('home');section.insertBefore(b,section.firstChild);});
-function addProject(e){e.preventDefault();d.projects.unshift({id:Date.now(),code:pc.value,name:pn.value,type:pt.value,role:pr.value,status:ps.value,note:px.value});save();e.target.reset();toggle('pf');render()}
+function addProject(e){e.preventDefault();d.projects.unshift({id:Date.now(),code:pc.value,name:pn.value,type:pt.value,role:pr.value,status:ps.value,note:px.value});d.lastProject=pc.value;save();e.target.reset();toggle('pf');render()}
 function addTask(e){e.preventDefault();d.tasks.unshift({id:Date.now(),title:tt.value,project:tp.value,due:td.value,done:false});save();e.target.reset();toggle('tf');render()}
 function addFollow(e){e.preventDefault();d.follow.unshift({id:Date.now(),title:ft.value,person:fp.value,project:fpr.value,date:fd.value,last:flast.value,done:false});save();e.target.reset();toggle('ff');render()}
 function addMoney(e){e.preventDefault();d.money.unshift({id:Date.now(),title:mt.value,person:mp.value,project:mpr.value,amount:+ma.value,type:mty.value,due:md.value});save();e.target.reset();toggle('mf');render()}
@@ -147,7 +170,7 @@ function addIdea(e){e.preventDefault();d.ideas.unshift({id:Date.now(),title:it.v
 function quick(){let q=prompt('چی توی ذهنت هست؟');if(q){d.inbox.unshift({id:Date.now(),text:q});save();render()}}
 function done(t,id){let x=d[t].find(x=>x.id===id);x.done=!x.done;save();render()}
 function del(t,id){d[t]=d[t].filter(x=>x.id!==id);save();render()}
-function openP(id){cur=id;go('detail')}
+function openP(id){cur=id;let p=d.projects.find(x=>x.id===id);if(p){d.lastProject=p.code;save()}go('detail')}
 function delProject(){if(confirm('پروژه حذف شود؟')){d.projects=d.projects.filter(x=>x.id!==cur);save();go('projects')}}
 
 function dateUrgency(v){
@@ -169,7 +192,15 @@ kp.textContent=d.projects.length;kt.textContent=d.tasks.filter(x=>!x.done).lengt
 let na=nextAction();smartHome.innerHTML=na?`<div class=smart-action>${esc(na.title)}</div><div class=muted>${esc(na.kind)} · ${esc(na.meta||'عمومی')} · <span class="urgency ${na.urg.cls}">${esc(na.urg.label)}</span></div>`:`<div class=smart-action>فعلاً کار فوری نداری 👌</div><div class=muted>Inbox و پروژه‌ها مرتب‌اند.</div>`;
 ht.innerHTML=d.tasks.filter(x=>!x.done).sort((a,b)=>dateUrgency(a.due).days-dateUrgency(b.due).days).slice(0,5).map(x=>`<div class=item><b>${esc(x.title)}</b><div class=muted>${esc(x.project)} · ${esc(x.due||'بدون موعد')}</div></div>`).join('')||'<div class=empty>فعلاً کاری باز نیست؛ دنگی!</div>';
 hf.innerHTML=d.follow.filter(x=>!x.done).slice(0,5).map(x=>`<div class=item><b>${esc(x.title)}</b><div class=muted>${esc(x.person)} · ${esc(x.project)} · ${esc(x.date||'بدون تاریخ')}</div></div>`).join('')||'<div class=empty>پیگیری بازی نیست.</div>';
-renderProjects();renderTasks();renderFollow();renderMoney();renderPeople();renderIdeas();renderInbox();renderDetail()
+renderProjects();renderTasks();renderFollow();renderMoney();renderPeople();renderIdeas();renderInbox();renderDetail();
+projectOptions('tp');projectOptions('fpr');projectOptions('mpr')
+}
+function quickAdd(screen){go(screen);let map={tasks:'tf',follow:'ff',money:'mf'};let id=map[screen];let box=document.getElementById(id);if(box)box.style.display='block'}
+function projectOptions(selId){
+  let sel=document.getElementById(selId);if(!sel)return;
+  let cur=sel.value||d.lastProject||'';
+  sel.innerHTML='<option value="">— بدون پروژه —</option>'+d.projects.map(p=>`<option value="${esc(p.code)}">${esc(p.code)} — ${esc(p.name)}</option>`).join('');
+  sel.value=(cur&&d.projects.some(p=>p.code===cur))?cur:'';
 }
 function renderProjects(){let q=(psearch?.value||'').toLowerCase();pl.innerHTML=d.projects.filter(x=>(x.code+x.name+x.type+x.status).toLowerCase().includes(q)).map(x=>`<div class="card project-card"><div class="project-code">${esc(x.code)}</div><div class="project-name">${esc(x.name)}</div><div class="project-meta"><span class=badge>${esc(x.type)}</span><span class=badge>${esc(x.role)}</span><span class=badge>${esc(x.status)}</span></div><div class=project-footer><span>${esc(x.note||'بدون یادداشت')}</span><button onclick="openP(${x.id})">باز کردن</button></div></div>`).join('')||'<div class=empty>پروژه‌ای ثبت نشده.</div>'}
 function renderTasks(){let q=(tsearch?.value||'').toLowerCase();tl.innerHTML=d.tasks.filter(x=>(x.title+x.project).toLowerCase().includes(q)).map(x=>`<div class=item><input type=checkbox ${x.done?'checked':''} onchange="done('tasks',${x.id})"> ${esc(x.title)} <button class=danger onclick="del('tasks',${x.id})">حذف</button><div class=muted>${esc(x.project)} · ${esc(x.due||'')}</div></div>`).join('')||'<div class=empty>کاری نیست.</div>'}
@@ -181,6 +212,79 @@ function renderInbox(){bl.innerHTML=d.inbox.map(x=>`<div class=card>${esc(x.text
 function stages(p){if(p.type==='مستند')return ['ایده','تحقیق','توسعه','تأمین مالی','پیش‌تولید','تولید','پس‌تولید','انتشار','تمام‌شده'];if(p.type==='فیلمنامه')return ['ایده','طرح','فیلمنامه','بازنویسی','نهایی','تمام‌شده'];return ['ایده','توسعه','فیلمنامه','تأمین مالی','پیش‌تولید','تولید','پس‌تولید','انتشار','تمام‌شده']}
 function setStage(i){let p=d.projects.find(x=>x.id===cur);if(!p)return;let a=stages(p);p.status=a[i];save();render()}
 function renderDetail(){if(!cur)return;let p=d.projects.find(x=>x.id===cur);if(!p)return;let ts=d.tasks.filter(x=>x.project===p.code),fs=d.follow.filter(x=>x.project===p.code),ms=d.money.filter(x=>x.project===p.code),bal=ms.reduce((a,x)=>a+(x.type==='in'?x.amount:-x.amount),0),a=stages(p),wi=a.indexOf(p.status);if(wi<0)wi=0;let workflow=`<div class=workflow-card><div class=workflow-head><h3>مسیر پروژه</h3><small>روی مرحله بزن</small></div><div class=workflow-scroll><div class=workflow-track>${a.map((s,i)=>`<div class="wstep ${i<wi?'done':i===wi?'current':''}" onclick="setStage(${i})"><div><div class=wnode>${i<wi?'✓':i+1}</div><div class=wlabel>${esc(s)}</div></div>${i<a.length-1?`<div class="wline ${i<wi?'done':''}"></div>`:''}</div>`).join('')}</div></div><div class=workflow-now>مرحله فعلی: <b>${esc(a[wi])}</b> · مرحله بعد: <b>${esc(a[wi+1]||'پایان پروژه')}</b></div></div>`;
-dbox.innerHTML=`<div class=card><h2>${esc(p.code)} — ${esc(p.name)}</h2><span class=badge>${esc(p.type)}</span><span class=badge>${esc(p.role)}</span><span class=badge>${esc(p.status)}</span><p>${esc(p.note)}</p><div class=grid><div><div class=muted>کار باز</div><b>${ts.filter(x=>!x.done).length}</b></div><div><div class=muted>پیگیری باز</div><b>${fs.filter(x=>!x.done).length}</b></div><div><div class=muted>تراکنش</div><b>${ms.length}</b></div><div><div class=muted>مانده</div><b>${fmt(bal)}</b></div></div></div>${workflow}${(()=>{let n=nextAction(p.code);return n?`<div class="card smart-card"><div class=smart-title>کار بعدی این پروژه</div><div class=smart-action>${esc(n.title)}</div><div class=muted>${esc(n.kind)} · ${esc(n.meta||'')} · <span class="urgency ${n.urg.cls}">${esc(n.urg.label)}</span></div></div>`:`<div class="card smart-card"><div class=smart-title>کار بعدی این پروژه</div><div class=smart-action>مورد بازی ثبت نشده</div><div class=muted>می‌تونی یک کار یا پیگیری جدید اضافه کنی.</div></div>`})()}<div class=card><h3>⚡ کارها</h3>${ts.map(x=>`<div class=item>${x.done?'✓':'○'} ${esc(x.title)} · ${esc(x.due||'')}</div>`).join('')||'<div class=empty>کاری ندارد.</div>'}</div><div class=card><h3>🔄 پیگیری</h3>${fs.map(x=>`<div class=item>${x.done?'✓':'↻'} ${esc(x.title)}<div class=muted>${esc(x.person)} · ${esc(x.date||'')}</div></div>`).join('')||'<div class=empty>پیگیری ندارد.</div>'}</div><div class=card><h3>💰 مالی</h3>${ms.map(x=>`<div class=item>${esc(x.title)} <b class="${x.type==='in'?'in':'out'}">${x.type==='in'?'+':'-'}${fmt(x.amount)}</b></div>`).join('')||'<div class=empty>تراکنشی ندارد.</div>'}</div>`}
+dbox.innerHTML=`<div class=card><h2>${esc(p.code)} — ${esc(p.name)}</h2><span class=badge>${esc(p.type)}</span><span class=badge>${esc(p.role)}</span><span class=badge>${esc(p.status)}</span><p>${esc(p.note)}</p><div class=grid><div><div class=muted>کار باز</div><b>${ts.filter(x=>!x.done).length}</b></div><div><div class=muted>پیگیری باز</div><b>${fs.filter(x=>!x.done).length}</b></div><div><div class=muted>تراکنش</div><b>${ms.length}</b></div><div><div class=muted>مانده</div><b>${fmt(bal)}</b></div></div></div><div class=quick-grid style="margin-top:12px"><button class=quick onclick="quickAdd('tasks')"><strong>✓ کار جدید</strong><small>برای همین پروژه</small></button><button class=quick onclick="quickAdd('follow')"><strong>↻ پیگیری جدید</strong><small>برای همین پروژه</small></button><button class=quick onclick="quickAdd('money')"><strong>💰 تراکنش جدید</strong><small>برای همین پروژه</small></button></div>${workflow}${(()=>{let n=nextAction(p.code);return n?`<div class="card smart-card"><div class=smart-title>کار بعدی این پروژه</div><div class=smart-action>${esc(n.title)}</div><div class=muted>${esc(n.kind)} · ${esc(n.meta||'')} · <span class="urgency ${n.urg.cls}">${esc(n.urg.label)}</span></div></div>`:`<div class="card smart-card"><div class=smart-title>کار بعدی این پروژه</div><div class=smart-action>مورد بازی ثبت نشده</div><div class=muted>می‌تونی یک کار یا پیگیری جدید اضافه کنی.</div></div>`})()}<div class=card><h3>⚡ کارها</h3>${ts.map(x=>`<div class=item>${x.done?'✓':'○'} ${esc(x.title)} · ${esc(x.due||'')}</div>`).join('')||'<div class=empty>کاری ندارد.</div>'}</div><div class=card><h3>🔄 پیگیری</h3>${fs.map(x=>`<div class=item>${x.done?'✓':'↻'} ${esc(x.title)}<div class=muted>${esc(x.person)} · ${esc(x.date||'')}</div></div>`).join('')||'<div class=empty>پیگیری ندارد.</div>'}</div><div class=card><h3>💰 مالی</h3>${ms.map(x=>`<div class=item>${esc(x.title)} <b class="${x.type==='in'?'in':'out'}">${x.type==='in'?'+':'-'}${fmt(x.amount)}</b></div>`).join('')||'<div class=empty>تراکنشی ندارد.</div>'}</div>`}
 render()
+
+// --- قفل رمز عبور ---
+const PK='dangi_pin';
+function initLock(){
+  let pin=localStorage[PK];
+  if(!pin){
+    lockMsg.textContent='برای شروع، یک رمز برای دَنگی بساز (حداقل ۴ کاراکتر)';
+    lockInput.placeholder='رمز جدید';
+    lockBtn.textContent='ساخت رمز';
+    lockScreen.dataset.mode='setup';
+  }else{
+    lockMsg.textContent='برای ورود، رمز را وارد کن';
+    lockInput.placeholder='رمز عبور';
+    lockBtn.textContent='ورود';
+    lockScreen.dataset.mode='unlock';
+    if(window.AndroidBiometric && window.AndroidBiometric.isAvailable()){
+      bioBtn.style.display='block';
+      setTimeout(tryBiometric,300);
+    }else{
+      bioBtn.style.display='none';
+    }
+  }
+  lockScreen.style.display='flex';
+  setTimeout(()=>lockInput.focus(),50);
+}
+function handleLockSubmit(e){
+  e.preventDefault();
+  let v=lockInput.value;
+  if(lockScreen.dataset.mode==='setup'){
+    if(v.trim().length<4){lockError.textContent='رمز باید حداقل ۴ کاراکتر باشد';return false}
+    localStorage[PK]=v;
+    lockScreen.style.display='none';
+  }else{
+    if(v===localStorage[PK]){
+      lockError.textContent='';
+      lockScreen.style.display='none';
+    }else{
+      lockError.textContent='رمز اشتباه است';
+      lockInput.value='';lockInput.focus();
+    }
+  }
+  return false;
+}
+function tryBiometric(){
+  lockError.textContent='';
+  if(window.AndroidBiometric && window.AndroidBiometric.isAvailable()){
+    window.AndroidBiometric.authenticate();
+  }else{
+    lockError.textContent='اثر انگشت روی این دستگاه در دسترس نیست';
+  }
+}
+window.onBiometricResult=function(success){
+  if(success){
+    lockError.textContent='';
+    lockScreen.style.display='none';
+  }else{
+    lockError.textContent='ورود با اثر انگشت لغو یا ناموفق بود، رمز را وارد کن';
+  }
+};
+function changePin(){
+  let pin=localStorage[PK];
+  if(pin){
+    let old=prompt('برای تغییر رمز، ابتدا رمز فعلی را وارد کن:');
+    if(old===null)return;
+    if(old!==pin){alert('رمز فعلی اشتباه است');return}
+  }
+  let n=prompt('رمز جدید را وارد کن (حداقل ۴ کاراکتر):');
+  if(n===null)return;
+  if(n.trim().length<4){alert('رمز نامعتبر است، حداقل ۴ کاراکتر لازم است');return}
+  localStorage[PK]=n.trim();
+  alert('رمز با موفقیت عوض شد ✅');
+}
+initLock();
 </script></html>
