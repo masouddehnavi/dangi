@@ -95,6 +95,7 @@ input:focus,textarea:focus,select:focus{border-color:#3a7a90;box-shadow:0 0 0 3p
     </form>
     <div id="lockError" class="lock-error"></div>
     <button type="button" id="bioBtn" class="bio-btn" onclick="tryBiometric()">👆 ورود با اثر انگشت</button>
+    <div id="bioDiag" style="font-size:10px;color:#9aa5b5;margin-top:8px"></div>
   </div>
 </div>
 <header><div class="header-row"><div><h1>دَنگی</h1><p>اتاق فرمان شخصی پروژه‌های فیلمسازی</p></div><button class="lock-toggle" onclick="changePin()" title="تغییر رمز">🔒</button></div></header>
@@ -229,12 +230,24 @@ function initLock(){
     lockInput.placeholder='رمز عبور';
     lockBtn.textContent='ورود';
     lockScreen.dataset.mode='unlock';
-    if(window.AndroidBiometric && window.AndroidBiometric.isAvailable()){
-      bioBtn.style.display='block';
-      setTimeout(tryBiometric,300);
-    }else{
+    let diag='';
+    if(!window.AndroidBiometric){
+      diag='پل ارتباطی اندروید پیدا نشد (AndroidBiometric تعریف نشده)';
       bioBtn.style.display='none';
+    }else{
+      let avail=false,err='';
+      try{avail=window.AndroidBiometric.isAvailable()}catch(e){err=String(e)}
+      if(avail){
+        diag='آماده — در حال باز کردن حسگر...';
+        bioBtn.style.display='block';
+        setTimeout(tryBiometric,300);
+      }else{
+        diag='پل پیدا شد ولی isAvailable() گفت false'+(err?(' | خطا: '+err):'');
+        bioBtn.style.display='none';
+      }
     }
+    var diagEl=document.getElementById('bioDiag');
+    if(diagEl)diagEl.textContent=diag;
   }
   lockScreen.style.display='flex';
   setTimeout(()=>lockInput.focus(),50);
